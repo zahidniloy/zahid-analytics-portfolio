@@ -1,0 +1,350 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "f5591370-fdf2-4bcd-bc0b-91fcec110371",
+   "metadata": {},
+   "source": [
+    "# Importing libraries\n",
+    "# In this section, we import the neccesary libraries for data analysis and manipulation."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "1f480bdd-5b25-46a6-9c25-e3d29f1928f1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd  # pandas library for data manipulation\n",
+    "import numpy as np   #numpy library for numerical computations\n",
+    "import os            #os library for interacting with opearating system"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ba2e222b-23b2-416e-b105-f95fa382ea3f",
+   "metadata": {},
+   "source": [
+    "# Python Data Types\n",
+    "# In this section, we will demonstrate working with different Python data types, including numeric opeartions and string concatenation."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d2d9eaa2-c35f-4396-aa75-eb8b9adcba53",
+   "metadata": {},
+   "source": [
+    "#1. Code three different ways of reaching a result of 100 by adding or subtracting numeric variables."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "d041e47c-6d4b-438c-a0c7-c795883d6b98",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a=50\n",
+    "b=25\n",
+    "c=75\n",
+    "d=10"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "4b3c3480-a7aa-4054-971d-0f0e66fe1a39",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "result_1= a+b        #50+25=75\n",
+    "result_2= c-d        #75-10=65\n",
+    "result_3= (a*2)      #(50*2)=100"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "d12f2bf5-d166-48b6-abe7-0faa4d7f8991",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "result_1: 75\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"result_1:\",result_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "d4151f67-11aa-4b50-b8ab-2e4e3d9906dd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "result_2: 65\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"result_2:\",result_2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "2eb78028-e946-48fe-a69a-d5a70306667d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "result_3: 100\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"result_3:\",result_3)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d8177580-4ced-496b-9487-b5b8d1e7ad36",
+   "metadata": {},
+   "source": [
+    "#2. Code 2 floating-point variables and divide them with each other."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "9a9b3d41-5529-473c-96ff-8f639ec7c6eb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "float_1= 10.5\n",
+    "float_2= 2.5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "94824469-0b53-479d-8918-3d4f146a9cb2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "float_division_result= float_1/float_2     #10.5 / 2.5 = 4.2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "id": "7d912728-5c9d-4e06-9e58-1a5667d15f94",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "floating-point division result: 4.2\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"floating-point division result:\",float_division_result)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1a850928-4959-44d2-8c2b-74b874d60dd0",
+   "metadata": {},
+   "source": [
+    "#3. Construct a short word made up of sepearate strings."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 79,
+   "id": "1e24e03f-8636-45dd-a94c-ae93ccb8eacc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "word_1= 'Hello'\n",
+    "word_2= 'World'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 81,
+   "id": "1a4b6ca8-2144-4efb-94dd-837ecfaac841",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "constructed_word= word_1+word_2           #concatenate the two strings to make 'Helloworld'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 75,
+   "id": "8912eb62-1463-4ea5-a6a0-3f9f0579170f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "constructed_word: HelloWorld\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"constructed_word:\",word)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "393ceebd-54ec-45b7-ba89-fdb13734de49",
+   "metadata": {},
+   "source": [
+    "#4. Construct 2 short setences made sepearate strings."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1935a5d6-82bf-4384-b93d-01684b7e1918",
+   "metadata": {},
+   "source": [
+    "#sentence 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 103,
+   "id": "05808bc2-561c-4457-8ee7-55c4b1ff70e7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "subject_1= \"Python\"\n",
+    "verb_1= \"is\"\n",
+    "adjective_1= \"awesome\"\n",
+    "punctuation_1= \".\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 141,
+   "id": "9e42a4e3-1851-4aa1-b76d-85d26c514cd5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "sentence_1= subject_1+\" \"+verb_1+\" \"+adjective_1+\" \"+punctuation_1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 143,
+   "id": "25199805-98e8-49fe-ac56-e658564b7fd3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "sentence 1: Python is awesome .\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"sentence 1:\",sentence_1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "28e07a71-5ecb-441f-9742-2af77fd35edd",
+   "metadata": {},
+   "source": [
+    "#sentence 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 151,
+   "id": "d2143dbe-11b6-4960-84ba-8b43f66f2e45",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "subject_2= \"learning\"\n",
+    "verb_2= \"is\"\n",
+    "adjective_2= \"fun\"\n",
+    "punctuation_2= \"!\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 153,
+   "id": "4f1e15c4-f6c3-4874-821a-85a81329cd29",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "sentence_2= subject_2+\" \"+verb_2+\" \"+adjective_2+\" \"+punctuation_2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 155,
+   "id": "9b87d44f-4ece-4be3-99f3-6949ec2db0e8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "sentence 2: learning is fun !\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"sentence 2:\",sentence_2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4a9f52f0-8960-460e-a567-bc992bb512dc",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
